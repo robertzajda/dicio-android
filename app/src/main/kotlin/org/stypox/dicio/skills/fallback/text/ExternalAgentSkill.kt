@@ -1,7 +1,7 @@
 package org.stypox.dicio.skills.fallback.text
 
-import androidx.preference.PreferenceManager
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
@@ -21,13 +21,12 @@ class ExternalAgentSkill(correspondingSkillInfo: SkillInfo) :
     RecognizeEverythingSkill(correspondingSkillInfo) {
 
     override suspend fun generateOutput(ctx: SkillContext, inputData: String): SkillOutput {
-        val preferences = PreferenceManager.getDefaultSharedPreferences(ctx.android)
-        val url = preferences.getString(KEY_EXTERNAL_AGENT_URL, "")?.trim().orEmpty()
+        val settings = ctx.android.externalAgentDataStore.data.first()
+        val url = settings.url.trim()
         if (url.isBlank()) {
             return ExternalAgentOutput(ctx.getString(R.string.external_agent_missing_url))
         }
-        val apiKey =
-            preferences.getString(KEY_EXTERNAL_AGENT_API_KEY, "")?.trim().orEmpty()
+        val apiKey = settings.apiKey.trim()
 
         return withContext(Dispatchers.IO) {
             try {
@@ -108,8 +107,6 @@ class ExternalAgentSkill(correspondingSkillInfo: SkillInfo) :
     }
 
     companion object {
-        private const val KEY_EXTERNAL_AGENT_URL = "external_agent_url"
-        private const val KEY_EXTERNAL_AGENT_API_KEY = "external_agent_api_key"
         private const val JSON_CONTENT_TYPE = "application/json"
         private val JSON_MEDIA_TYPE = "$JSON_CONTENT_TYPE; charset=utf-8".toMediaType()
         private val httpClient = OkHttpClient()
