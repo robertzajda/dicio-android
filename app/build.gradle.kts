@@ -180,6 +180,7 @@ dependencies {
     // Miscellaneous
     implementation(libs.unbescape)
     implementation(libs.jsoup)
+    implementation(libs.androidx.preference)
 
     // Used by skills
     implementation(libs.exp4j)
