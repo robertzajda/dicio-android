@@ -19,6 +19,7 @@ import org.stypox.dicio.settings.datastore.UserSettings
 import org.stypox.dicio.settings.datastore.UserSettingsModule
 import org.stypox.dicio.skills.calculator.CalculatorInfo
 import org.stypox.dicio.skills.current_time.CurrentTimeInfo
+import org.stypox.dicio.skills.fallback.text.ExternalAgentInfo
 import org.stypox.dicio.skills.fallback.text.TextFallbackInfo
 import org.stypox.dicio.skills.listening.ListeningInfo
 import org.stypox.dicio.skills.lyrics.LyricsInfo
@@ -55,6 +56,7 @@ class SkillHandler @Inject constructor(
 
     // TODO add more fallback skills (e.g. search)
     private val fallbackSkillInfoList = listOf(
+        ExternalAgentInfo,
         TextFallbackInfo,
     )
 

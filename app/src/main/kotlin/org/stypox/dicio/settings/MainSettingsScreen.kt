@@ -13,6 +13,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.DeleteSweep
 import androidx.compose.material.icons.filled.Extension
+import androidx.compose.material.icons.filled.SmartToy
 import androidx.compose.material.icons.filled.UploadFile
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -31,6 +32,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.compose.ui.platform.LocalContext
+import android.content.Intent
 import org.stypox.dicio.R
 import org.stypox.dicio.settings.datastore.InputDevice
 import org.stypox.dicio.settings.datastore.Language
@@ -196,6 +199,20 @@ private fun MainSettingsScreen(
 
         item {
             Spacer(modifier = Modifier.height(8.dp))
+        }
+
+        /* EXTERNAL AGENT */
+        item { SettingsCategoryTitle(stringResource(R.string.pref_external_agent_category)) }
+        item {
+            val context = LocalContext.current
+            SettingsItem(
+                title = stringResource(R.string.pref_external_agent_title),
+                icon = Icons.Default.SmartToy,
+                description = stringResource(R.string.pref_external_agent_summary),
+                modifier = Modifier.clickable {
+                    context.startActivity(Intent(context, SettingsActivity::class.java))
+                }
+            )
         }
     }
 }

@@ -64,6 +64,13 @@
     <string name="pref_appearance">Appearance</string>
     <string name="pref_skills_title">Skills</string>
     <string name="pref_skills_summary">Enable/disable skills and tune their behavior</string>
+    <string name="pref_external_agent_category">External agent</string>
+    <string name="pref_external_agent_title">Configure external agent</string>
+    <string name="pref_external_agent_summary">Set the webhook URL and optional API key used by the external agent skill.</string>
+    <string name="pref_external_agent_url_title">Webhook URL</string>
+    <string name="pref_external_agent_url_summary">The HTTPS endpoint that receives user text as JSON.</string>
+    <string name="pref_external_agent_api_key_title">API key</string>
+    <string name="pref_external_agent_api_key_summary">Optional Bearer token that will be sent with the request.</string>
     <string name="expand">Expand</string>
     <string name="reduce">Reduce</string>
     <string name="pref_theme">Theme</string>
@@ -151,6 +158,7 @@
     <string name="skill_name_current_time">Current time</string>
     <string name="skill_sentence_example_current_time">What time is it?</string>
     <string name="skill_fallback_name_text">Text message</string>
+    <string name="skill_external_agent_name">External agent</string>
     <string name="skill_search_here_is_what_i_found">Here is what I found</string>
     <string name="skill_search_no_results">The search returned no results, try telling me again what you want to search for</string>
     <string name="skill_search_no_results_stop">The search returned no results</string>
@@ -233,4 +241,10 @@
     <string name="skill_weather_kelvin">K</string>
     <string name="skill_weather_meters_per_second">m/s</string>
     <string name="skill_weather_miles_per_hour">mph</string>
+    <string name="external_agent_missing_url">Configure the external agent URL in settings first.</string>
+    <string name="external_agent_request_failed">The external agent request failed: %1$s</string>
+    <string name="external_agent_http_error">External agent returned HTTP %1$d.</string>
+    <string name="external_agent_empty_response">External agent returned an empty response.</string>
+    <string name="external_agent_invalid_response">External agent returned an invalid response.</string>
+    <string name="external_agent_invalid_response_with_reason">External agent response could not be parsed: %1$s</string>
 </resources>

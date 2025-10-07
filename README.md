@@ -38,6 +38,12 @@ Currently Dicio answers questions about:
 - **navigation**: opens the navigation app at the requested position - _Take me to New York, fifteenth avenue_
 - **media**: play, pause, previous, next song
 
+### External Agent Skill
+
+The optional external agent fallback lets you forward unmatched user queries to your own webhook (for example an n8n workflow).
+Open **Settings → External agent** to enter the webhook URL and, if required, an API key. When enabled, Dicio will POST the user
+text as JSON to the configured endpoint and speak the response.
+
 ## Speech to text
 
 Dicio uses [Vosk](https://github.com/alphacep/vosk-api/) as its speech to text (`STT`) engine. In order to be able to run on every phone small models are employed, weighing `~50MB`. The download from [here](https://alphacephei.com/vosk/models) starts automatically whenever needed, so the app language can be changed seamlessly.

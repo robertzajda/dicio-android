@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:key="external_agent_category"
+        android:title="@string/pref_external_agent_category">
+
+        <EditTextPreference
+            android:key="external_agent_url"
+            android:title="@string/pref_external_agent_url_title"
+            android:summary="@string/pref_external_agent_url_summary"
+            android:dialogTitle="@string/pref_external_agent_url_title"
+            android:inputType="textUri" />
+
+        <EditTextPreference
+            android:key="external_agent_api_key"
+            android:title="@string/pref_external_agent_api_key_title"
+            android:summary="@string/pref_external_agent_api_key_summary"
+            android:dialogTitle="@string/pref_external_agent_api_key_title"
+            android:inputType="textPassword"
+            android:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+</PreferenceScreen>

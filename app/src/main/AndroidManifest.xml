@@ -70,6 +70,11 @@
             android:exported="false" />
 
         <activity
+            android:name=".settings.SettingsActivity"
+            android:exported="false"
+            android:label="@string/pref_external_agent_category" />
+
+        <activity
             android:name=".io.input.stt_popup.SttPopupActivity"
             android:taskAffinity=""
             android:excludeFromRecents="true"
