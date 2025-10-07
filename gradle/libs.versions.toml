@@ -31,7 +31,6 @@ unbescape = "1.1.6.RELEASE"
 voskAndroid = "0.3.32"
 litert = "1.1.2"
 permissionFlow = "2.0.0"
-preference = "1.2.1"
 
 [libraries]
 accompanist-drawablepainter = { module = "com.google.accompanist:accompanist-drawablepainter", version.ref = "accompanist" }
@@ -84,7 +83,6 @@ vosk-android = { module = "com.alphacephei:vosk-android", version.ref = "voskAnd
 litert = { module = "com.google.ai.edge.litert:litert", version.ref = "litert" }
 permission-flow-android = { module = "dev.shreyaspatil.permission-flow:permission-flow-android", version.ref = "permissionFlow" }
 permission-flow-compose = { module = "dev.shreyaspatil.permission-flow:permission-flow-compose", version.ref = "permissionFlow" }
-androidx-preference = { module = "androidx.preference:preference-ktx", version.ref = "preference" }
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "gradle" }
